@@ -1,0 +1,524 @@
+/* ================================================================
+   TINY KINDNESS TUNES — FULL PRODUCTION STYLES v2.1
+   Fixed: 12 missing classes, hover states, mobile breakpoints,
+          !important cleanup, z-index layering
+   ================================================================ */
+
+:root {
+  --yellow:#FFD93D; --orange:#FF6B35; --pink:#E91E8C; --purple:#7B3FBE; 
+  --blue:#0077B6; --green:#00897B; --red:#E63946; --teal:#00BBF9; 
+  --bg:#FFF8EC; --card:#FFFFFF; --text:#1E1B2E; --muted:#5C5470;
+  --radius-card: 28px;
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.09);
+}
+
+/* ── RESET ── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth; scroll-padding-top:72px }
+body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; line-height:1.6 }
+
+/* ── BACKGROUND DECORATION ── */
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(232,30,140,.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(0,187,249,.08)  0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255,217,61,.10)  0%, transparent 50%),
+    radial-gradient(circle at 20% 75%, rgba(123,63,190,.07)  0%, transparent 50%);
+}
+
+/* ── FLOATING STARS ── */
+.stars { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden }
+.star  { position:absolute; animation:floatStar linear infinite; opacity:.4; user-select:none }
+@keyframes floatStar {
+  0%   { transform:translateY(100vh) rotate(0deg);   opacity:0 }
+  10%  { opacity:.4 }
+  90%  { opacity:.4 }
+  100% { transform:translateY(-120px) rotate(360deg); opacity:0 }
+}
+
+/* ── RAINBOW STRIPE ── */
+.rainbow-stripe { height:8px; background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),#00C49A,var(--teal),var(--purple)) }
+
+/* ── NAVIGATION ── */
+nav {
+  position:sticky; top:0; z-index:200;
+  background:rgba(255,248,236,.93); backdrop-filter:blur(16px);
+  border-bottom:3px solid var(--yellow);
+  padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.nav-logo {
+  font-family:'Baloo 2',cursive; font-size:20px; font-weight:800;
+  color:var(--purple); text-decoration:none; display:flex; align-items:center; gap:7px;
+}
+.note-icon { font-style:normal }
+.nav-links { display:flex; gap:6px; flex-wrap:wrap }
+.nav-links a {
+  font-family:'Baloo 2',cursive; font-weight:700; font-size:14px;
+  text-decoration:none; padding:6px 13px; border-radius:999px; transition:0.2s;
+}
+.nav-links a:hover { transform:translateY(-1px); filter:brightness(1.1) }
+.nav-links a:nth-child(1) { color:var(--orange); background:rgba(255,107,53,.12) }
+.nav-links a:nth-child(2) { color:var(--purple); background:rgba(123,63,190,.12) }
+.nav-links a:nth-child(3) { color:var(--blue);   background:rgba(0,119,182,.12)  }
+.nav-links a:nth-child(4) { color:var(--pink);   background:rgba(232,30,140,.12) }
+
+/* ── HERO ── */
+.hero { position:relative; z-index:1; text-align:center; padding:56px 24px 36px }
+.hero-badge {
+  display:inline-block; background:rgba(123,63,190,.1); color:var(--purple);
+  font-family:'Baloo 2',cursive; font-weight:700; font-size:14px;
+  padding:6px 18px; border-radius:999px; margin-bottom:18px;
+}
+.hero h1 {
+  font-family:'Baloo 2',cursive; font-size:clamp(44px,9vw,92px);
+  font-weight:800; line-height:1.02; margin-bottom:18px;
+}
+.word-tiny  { color:var(--purple); display:block }
+.word-kind  { color:var(--orange); display:block }
+.word-tunes { color:var(--pink);   display:block }
+.hero-sub { font-size:19px; font-weight:700; color:var(--muted); max-width:480px; margin:0 auto 30px }
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:28px }
+.notes-row { display:flex; gap:16px; justify-content:center; font-size:24px; opacity:.6 }
+
+/* ── WAVE DIVIDER ── */
+.wave-divider { line-height:0; position:relative; z-index:1 }
+.wave-divider.flip { transform:scaleY(-1) }
+
+/* ── LAYOUT: SECTIONS ── */
+section { padding:48px 24px; max-width:1080px; margin:0 auto; position:relative; z-index:1 }
+.section-header { text-align:center; margin-bottom:32px }
+.section-title {
+  font-family:'Baloo 2',cursive; font-weight:800;
+  font-size:clamp(28px,5vw,44px); margin-bottom:8px; text-align:center;
+}
+.section-sub { font-size:17px; font-weight:600; color:var(--muted) }
+
+/* Section title color variants */
+.color-orange { color:var(--orange) }
+.color-purple { color:var(--purple) }
+.color-blue   { color:var(--blue)   }
+.color-pink   { color:var(--pink)   }
+.color-green  { color:var(--green)  }
+
+/* ── FADE-UP ANIMATION ── */
+.fade-up { opacity:0; transform:translateY(24px); transition:opacity 0.5s ease, transform 0.5s ease }
+.fade-up.visible { opacity:1; transform:translateY(0) }
+
+/* ── ALBUM CARDS ── */
+.album-section {
+  background:var(--card);
+  border-radius:var(--radius-card);
+  overflow:hidden;
+  box-shadow:var(--shadow-card);
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  color:inherit;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.album-section:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,.14) }
+
+.album-header {
+  height:320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg, var(--purple), var(--pink));
+  padding:30px;
+  border-radius:var(--radius-card) var(--radius-card) 0 0;
+  overflow:hidden;
+}
+.album-cover-thumb {
+  width:100%;
+  height:100%;
+  max-width:190px;
+  object-fit:contain;
+  filter:drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+  transition:transform 0.3s ease;
+}
+.album-section:hover .album-cover-thumb { transform:scale(1.04) }
+
+.album-title {
+  font-family:'Baloo 2',cursive;
+  font-size:22px;
+  font-weight:800;
+  color:var(--text);
+  padding:20px 20px 4px;
+}
+.album-desc {
+  font-size:15px;
+  font-weight:600;
+  color:var(--muted);
+  padding:0 20px 16px;
+}
+
+/* Songs grid (when tracks are present) */
+.songs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; padding:0 20px 20px }
+.song-card {
+  background:rgba(123,63,190,.05);
+  border-radius:14px;
+  padding:12px;
+  transition:background 0.2s;
+}
+.song-card:hover { background:rgba(123,63,190,.1) }
+.song-title { font-weight:700; font-size:14px; color:var(--text) }
+
+/* ── ALBUMS GRID (matches book card grid) ── */
+#albumsContainer { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; margin-bottom:24px }
+
+/* ── BOOKS GRID ── */
+.books-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px }
+
+.book-card {
+  background:var(--card);
+  border-radius:var(--radius-card);
+  overflow:hidden;
+  box-shadow:var(--shadow-card);
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  color:inherit;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.book-card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,.14) }
+
+.book-card-cover-wrap {
+  height:320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg, var(--purple), var(--pink));
+  padding:30px;
+  border-radius:var(--radius-card) var(--radius-card) 0 0;
+  overflow:hidden;
+}
+.book-card-cover {
+  width:100%;
+  height:100%;
+  max-width:190px;
+  object-fit:contain;
+  filter:drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+  transition:transform 0.3s ease;
+}
+.book-card:hover .book-card-cover { transform:scale(1.04) }
+
+.book-card-info { padding:22px; flex:1; display:flex; flex-direction:column; gap:8px }
+.book-card-title { font-family:'Baloo 2',cursive; font-size:19px; font-weight:800; color:var(--text) }
+.book-card-author { font-size:13px; font-weight:700; color:var(--muted) }
+.book-card-desc { font-size:15px; font-weight:600; color:var(--muted); flex:1 }
+
+/* ── ABOUT SECTION ── */
+.about-card {
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  background:var(--card);
+  border-radius:var(--radius-card);
+  padding:36px;
+  box-shadow:var(--shadow-card);
+}
+.about-emoji-stack { font-size:28px; line-height:1.6; min-width:40px; text-align:center }
+.about-text h3 { font-family:'Baloo 2',cursive; font-size:22px; font-weight:800; color:var(--purple); margin-bottom:10px }
+.about-text p  { font-size:16px; color:var(--muted); font-weight:600 }
+
+/* ── CONTACT SECTION ── */
+.contact-card {
+  text-align:center;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  border-radius:var(--radius-card);
+  padding:56px 36px;
+  color:#fff;
+}
+.contact-card h2 { font-family:'Baloo 2',cursive; font-size:clamp(24px,4vw,38px); font-weight:800; margin-bottom:12px }
+.contact-card p  { font-size:16px; opacity:.9; margin-bottom:28px }
+
+/* ── BUTTONS ── */
+.btn {
+  font-family:'Baloo 2',cursive; font-weight:700; font-size:17px;
+  padding:14px 28px; border-radius:999px; text-decoration:none;
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; transition:transform 0.2s, box-shadow 0.2s;
+  border:none; cursor:pointer;
+}
+.btn:hover { transform:translateY(-2px) }
+
+.btn-songs  { background:var(--orange); color:#fff }
+.btn-songs:hover { box-shadow:0 6px 20px rgba(255,107,53,.4) }
+
+.btn-books  { background:var(--purple); color:#fff }
+.btn-books:hover { box-shadow:0 6px 20px rgba(123,63,190,.4) }
+
+.btn-green  { background:var(--green); color:#fff }
+.btn-green:hover { box-shadow:0 6px 20px rgba(0,137,123,.4) }
+
+.btn-amazon { background:var(--yellow); color:var(--text) }
+.btn-amazon:hover { box-shadow:0 6px 20px rgba(255,217,61,.5) }
+
+.btn-email  { background:#fff; color:var(--purple) }
+.btn-email:hover { box-shadow:0 6px 20px rgba(255,255,255,.4) }
+
+.btn-coming { background:rgba(123,63,190,.08); color:var(--muted); border:2px dashed rgba(123,63,190,.25); cursor:default; opacity:0.75 }
+
+/* ── KINDNESS BUBBLES BAND ── */
+.bubbles-band { background:var(--card); padding:24px 20px; overflow:hidden; position:relative; z-index:1 }
+.kindness-bubbles { display:flex; gap:12px; flex-wrap:wrap; justify-content:center }
+.kindness-bubble {
+  background:linear-gradient(135deg,rgba(123,63,190,.1),rgba(232,30,140,.1));
+  border:1.5px solid rgba(123,63,190,.18);
+  color:var(--purple);
+  font-family:'Baloo 2',cursive;
+  font-weight:700;
+  font-size:14px;
+  padding:8px 18px;
+  border-radius:999px;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.kindness-bubble:hover { transform:translateY(-2px) scale(1.04); box-shadow:0 4px 14px rgba(123,63,190,.2) }
+
+/* ── FOOTER ── */
+footer {
+  text-align:center;
+  padding:32px 20px;
+  background:rgba(123,63,190,.06);
+  position:relative;
+  z-index:1;
+}
+.footer-emojis { display:block; font-size:22px; margin-bottom:8px; letter-spacing:8px }
+.footer-copy   { font-size:14px; font-weight:600; color:var(--muted) }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 640px) {
+  .hero { padding:36px 16px 24px }
+  .hero-btns { flex-direction:column; align-items:center }
+  .btn { width:100%; max-width:320px }
+  .nav-links a { font-size:12px; padding:5px 10px }
+  .about-card { flex-direction:column; padding:24px }
+  .about-emoji-stack { display:none }
+  .contact-card { padding:36px 20px }
+  section { padding:36px 16px }
+  .album-header, .book-card-cover-wrap { height:240px }
+}
+
+@media (max-width: 480px) {
+  .nav-logo { font-size:16px }
+  #albumsContainer { grid-template-columns:1fr }
+  .books-grid { grid-template-columns:1fr }
+  .songs-grid { grid-template-columns:1fr }
+  .kindness-bubbles { gap:8px }
+  .kindness-bubble { font-size:12px; padding:6px 13px }
+}
+    /* ── VIRTUES ALBUM CARD ── */
+    .virtues-album-card {
+      background: var(--card);
+      border-radius: 32px;
+      box-shadow: 0 16px 56px rgba(123,63,190,.13), 0 4px 16px rgba(0,0,0,.06);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      margin-top: 24px;
+    }
+    .album-left {
+      background: linear-gradient(155deg, #6A0DAD 0%, var(--purple) 40%, var(--pink) 100%);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .album-left::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.15) 0%, transparent 55%),
+        radial-gradient(circle at 80% 85%, rgba(255,217,61,.18) 0%, transparent 50%);
+    }
+    .album-cover-img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+    .album-cover-img:hover { transform: scale(1.03) rotate(-1deg); }
+    .album-v-meta {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .album-v-meta h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 21px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+    .album-v-meta p {
+      font-size: 13px;
+      color: rgba(255,255,255,.75);
+      font-weight: 600;
+    }
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .v-badge {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+    .cta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-hyperfollow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--text);
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(255,217,61,.5);
+    }
+    .btn-hyperfollow:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,217,61,.6); }
+    .stream-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .btn-stream {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(255,255,255,.15);
+      border: 1.5px solid rgba(255,255,255,.35);
+      color: #fff;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    .btn-stream:hover { background: rgba(255,255,255,.28); transform: translateY(-1px); }
+
+    /* ── TRACKLIST PANEL ── */
+    .album-right {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .tracklist-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .tracklist-label {
+      font-family: 'Baloo 2', cursive;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--purple);
+    }
+    .track-count-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      background: rgba(123,63,190,.1);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .tracklist {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      max-height: 460px;
+      padding-right: 4px;
+    }
+    .tracklist::-webkit-scrollbar { width: 4px; }
+    .tracklist::-webkit-scrollbar-track { background: transparent; }
+    .tracklist::-webkit-scrollbar-thumb { background: rgba(123,63,190,.25); border-radius: 4px; }
+    .track-row {
+      display: grid;
+      grid-template-columns: 32px 1fr auto auto;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-decoration: none;
+      color: inherit;
+      opacity: 0;
+      animation: trackFadeUp 0.35s forwards;
+    }
+    .track-row:hover { background: rgba(123,63,190,.07); }
+    .track-row:hover .t-play  { opacity: 1; transform: scale(1.1); }
+    .track-row:hover .t-num   { opacity: 0; }
+    .t-num-wrap { position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+    .t-num  { font-family:'Baloo 2',cursive; font-size:14px; font-weight:700; color:var(--muted); transition:opacity 0.15s; }
+    .t-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:16px; opacity:0; transition:opacity 0.15s, transform 0.15s; }
+    .t-info { min-width: 0; }
+    .t-title  { font-weight:800; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--text); }
+    .t-virtue { font-size:11px; font-weight:700; color:var(--muted); margin-top:1px; }
+    .virtue-pill { font-size:11px; font-weight:700; padding:3px 10px; border-radius:999px; white-space:nowrap; }
+    .t-dur { font-size:12px; color:var(--muted); font-weight:600; min-width:36px; text-align:right; }
+
+    /* Virtue color pills */
+    .v-prudence   { background:rgba(0,119,182,.12);  color:var(--blue);    }
+    .v-justice    { background:rgba(232,30,140,.12); color:var(--pink);    }
+    .v-temperance { background:rgba(0,187,249,.12);  color:#0099CC;        }
+    .v-fortitude  { background:rgba(255,107,53,.12); color:var(--orange);  }
+    .v-persistence{ background:rgba(230,57,70,.12);  color:var(--red);     }
+    .v-hope       { background:rgba(255,217,61,.2);  color:#B8860B;        }
+    .v-charity    { background:rgba(0,137,123,.12);  color:var(--green);   }
+    .v-manners    { background:rgba(123,63,190,.12); color:var(--purple);  }
+    .v-intro      { background:rgba(0,0,0,.06);      color:var(--muted);   }
+    .v-outro      { background:rgba(0,0,0,.06);      color:var(--muted);   }
+
+    @keyframes trackFadeUp {
+      from { opacity:0; transform:translateY(10px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── RESPONSIVE: VIRTUES CARD ── */
+    @media (max-width: 760px) {
+      .virtues-album-card { grid-template-columns: 1fr; }
+      .album-left { padding: 32px 24px; }
+      .album-cover-img { width: 180px; height: 180px; }
+      .album-right { padding: 24px 20px; }
+      .tracklist { max-height: 340px; }
+    }
