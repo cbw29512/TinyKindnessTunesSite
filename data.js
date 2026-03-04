@@ -52,4 +52,5 @@ var books = [
     description: "A gentle good-morning story about kindness, gratitude, and starting each day with a smile! 🌅",
     price: "paid",
     amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
+   }
 ];
