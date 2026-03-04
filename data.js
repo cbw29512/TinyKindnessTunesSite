@@ -7,6 +7,14 @@ var site = {
 
 var albums = [
   {
+    title: "Tiny Kindness Tunes Singles",
+    description: "10 original singles about friendship, helping, kindness, and more — for little hearts ages 2–6! 🎵",
+    coverImage: "./assets/albums/wake-up-and-smile.png",
+    color: "orange",
+    spotifyUrl: "https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi",
+    songs: []
+  },
+  {
     title: "Virtues",
     description: "10 original songs about patience, courage, kindness, and more — for little hearts ages 2–6! 🌱",
     coverImage: "./assets/albums/TKTVirtue.png",
