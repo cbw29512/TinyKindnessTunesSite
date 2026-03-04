@@ -165,102 +165,10 @@
         <p class="section-sub">Press play and sing along! 🎤</p>
       </div>
 
-      <!-- Spotify artist embed (shown only when real ID is set in data.js) -->
-      <div class="fade-up" style="max-width:980px;margin:0 auto 22px;">
-        <iframe
-          id="spotifyArtistEmbed"
-          title="Tiny Kindness Tunes on Spotify"
-          style="width:100%;border:none;border-radius:16px;display:none;"
-          height="352"
-          loading="lazy"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-        </iframe>
-      </div>
+
 
       <!-- Dynamic album cards from data.js (Wake Up and Smile, etc.) -->
       <div id="albumsContainer"></div>
-
-      <!-- ── VIRTUES ALBUM CARD (static, hardcoded until DistroKid links are live) ── -->
-      <div class="virtues-album-card fade-up">
-
-        <!-- Left panel: cover + streaming CTAs -->
-        <div class="album-left">
-          <img
-            class="album-cover-img"
-            src="./assets/albums/wake-up-and-smile.png"
-            alt="Tiny Kindness Tunes: Singles cover"
-          >
-          <div class="album-v-meta">
-            <h3>Tiny Kindness Tunes<br>Singles</h3>
-            <p>Christopher B. Wilson · 2024–2025</p>
-          </div>
-          <div class="badge-row">
-            <span class="v-badge">Ages 2–6</span>
-            <span class="v-badge">10 Singles</span>
-            <span class="v-badge">On Spotify</span>
-          </div>
-          <div class="cta-block">
-            <!-- ▼ Replace with your DistroKid HyperFollow URL when live -->
-            <a class="btn-hyperfollow" href="https://distrokid.com/hyperfollow/YOUR-LINK" target="_blank" rel="noreferrer">
-              🎧 Listen / Follow Everywhere
-            </a>
-            <div class="stream-row">
-              <!-- ▼ Replace with real streaming URLs when live -->
-              <a class="btn-stream" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-                Spotify
-              </a>
-              <a class="btn-stream" href="https://music.apple.com/us/artist/tiny-kindness-tunes/1881445025" target="_blank" rel="noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.306.017-.455.026C4.786.07 4.043.15 3.34.428 2.077.953 1.168 1.798.557 3.008A6.11 6.11 0 00.06 4.748a25.3 25.3 0 00-.06 1.29v12.004c.007.292.013.585.03.876.03.635.112 1.26.332 1.86.594 1.625 1.77 2.733 3.433 3.267.66.211 1.338.288 2.028.3.284.005.568.013.852.013h11.93c.364 0 .724-.012 1.086-.03.58-.03 1.148-.108 1.7-.297 1.643-.566 2.804-1.676 3.382-3.31.21-.614.288-1.245.314-1.882.013-.305.02-.61.02-.914V7.385c-.003-.42-.009-.838-.036-1.261zm-3.21 10.58c-.005.42-.046.836-.172 1.238-.28.886-.862 1.474-1.75 1.748-.338.104-.688.152-1.041.167-.284.01-.57.016-.854.016H6.913c-.284 0-.57-.006-.854-.016a4.57 4.57 0 01-1.04-.167c-.89-.274-1.47-.862-1.75-1.748-.126-.402-.168-.818-.172-1.238a38.88 38.88 0 01-.018-.873V8.276c.003-.298.008-.596.018-.896.004-.42.046-.836.172-1.238.28-.886.862-1.474 1.75-1.748.338-.104.688-.152 1.04-.167.285-.01.57-.016.855-.016h10.06c.284 0 .57.006.854.016.352.015.703.063 1.04.167.888.274 1.47.862 1.75 1.748.126.402.168.818.172 1.238.01.3.015.598.018.896v8.425c-.003.29-.008.58-.018.873z"/><path d="M11.993 6.107a5.895 5.895 0 100 11.786 5.895 5.895 0 000-11.786zm0 9.788a3.894 3.894 0 110-7.785 3.894 3.894 0 010 7.785zm6.33-10.01a1.38 1.38 0 100-2.76 1.38 1.38 0 000 2.76z"/></svg>
-                Apple
-              </a>
-              <a class="btn-stream" href="https://music.youtube.com/channel/UCp1w_oUfXz2NQzSCEROEUIg" target="_blank" rel="noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-                YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right panel: tracklist -->
-        <div class="album-right">
-          <div class="tracklist-header">
-            <span class="tracklist-label">🎶 Tracklist</span>
-            <span class="track-count-badge">10 singles</span>
-          </div>
-          <div class="tracklist" id="tracklist"></div>
-        </div>
-
-      </div>
-      <!-- end .virtues-album-card -->
-
-      <!-- ── VIRTUES COMING SOON ── -->
-      <div class="virtues-coming-soon fade-up" style="
-        background: linear-gradient(135deg, #6A0DAD, var(--purple), var(--pink));
-        border-radius: 28px;
-        padding: 36px;
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        margin-top: 24px;
-        color: #fff;
-        box-shadow: 0 16px 56px rgba(123,63,190,.2);
-      ">
-        <img src="./assets/albums/virtues-cover.png" alt="Virtues album cover" style="
-          width: 120px; height: 120px; border-radius: 16px;
-          object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,.35); flex-shrink:0;
-        ">
-        <div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2px; opacity:.75; margin-bottom:6px;">Coming Soon</div>
-          <div style="font-family:'Baloo 2',cursive; font-size:26px; font-weight:800; line-height:1.1; margin-bottom:6px;">Tiny Kindness Tunes<br>Virtues</div>
-          <div style="font-size:14px; opacity:.8; margin-bottom:16px;">10 brand-new songs · Christopher B. Wilson · 2025</div>
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span style="background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); padding:5px 14px; border-radius:999px; font-size:13px; font-weight:700;">Ages 2–6</span>
-            <span style="background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); padding:5px 14px; border-radius:999px; font-size:13px; font-weight:700;">10 Tracks</span>
-            <span style="background:rgba(255,217,61,.25); border:1px solid rgba(255,217,61,.4); padding:5px 14px; border-radius:999px; font-size:13px; font-weight:700; color:#FFD93D;">⏳ Releasing Soon</span>
-          </div>
-        </div>
-      </div>
 
     </section>
 
@@ -386,48 +294,6 @@
   <script src="./data.js"></script>
   <!-- Site renderer — powers albums, books, about, contact, footer -->
   <script src="./renderer.js"></script>
-
-  <!-- Virtues tracklist (inline — update spotifyBase + per-track URLs when DistroKid is live) -->
-  <script>
-    (function() {
-      var tracks = [
-        { num:"1",  title:"Be a Good Friend",        theme:"Friendship",  icon:"🤝", cls:"v-charity",     url:"https://open.spotify.com/album/2UCoBXEfiYwmUbYjWXQJt8" },
-        { num:"2",  title:"Clean Up Song",            theme:"Helping",     icon:"🧹", cls:"v-justice",     url:"https://open.spotify.com/album/6yr3eFUxfRJpbxCoHd5zNJ" },
-        { num:"3",  title:"Goodnight Kind Heart",     theme:"Kindness",    icon:"🌙", cls:"v-outro",       url:"https://open.spotify.com/album/48RQC7W1JG2HwPzfGfeVj3" },
-        { num:"4",  title:"Helping Hands",            theme:"Helping",     icon:"🙌", cls:"v-fortitude",   url:"https://open.spotify.com/album/28VVhIAFPSk2NXudeT3oBI" },
-        { num:"5",  title:"Listen",                   theme:"Respect",     icon:"👂", cls:"v-prudence",    url:"https://open.spotify.com/album/3xeartukEymzXUc0XtYVmP" },
-        { num:"6",  title:"Please Please and Thank You", theme:"Manners",  icon:"💖", cls:"v-manners",     url:"https://open.spotify.com/album/4P09SpGEkP2E6AdbeSTTxh" },
-        { num:"7",  title:"Use Soft Words",           theme:"Kindness",    icon:"💬", cls:"v-temperance",  url:"https://open.spotify.com/album/6DT1CTPTeK5gZuqTtpbPMH" },
-        { num:"8",  title:"Take a Turn",              theme:"Sharing",     icon:"🔄", cls:"v-justice",     url:"https://open.spotify.com/album/7HOTbzIqUSCHNJ6x1qasa6" },
-        { num:"9",  title:"Share the Toys",           theme:"Sharing",     icon:"🧸", cls:"v-hope",        url:"https://open.spotify.com/album/6unr8V97RxSaLToFUL6AoW" },
-        { num:"10", title:"Wake Up and Smile",        theme:"Gratitude",   icon:"☀️", cls:"v-intro",       url:"https://open.spotify.com/album/0fsEpjpOuPaBmVRNI0TthP" }
-      ];
-
-      var container = document.getElementById("tracklist");
-      if (!container) return;
-
-      tracks.forEach(function(t, i) {
-        var row = document.createElement("a");
-        row.className = "track-row";
-        row.href = t.url;
-        row.target = "_blank";
-        row.rel = "noreferrer";
-        row.style.animationDelay = (0.05 * i + 0.4) + "s";
-        row.innerHTML =
-          '<div class="t-num-wrap">' +
-            '<span class="t-num">' + t.num + '</span>' +
-            '<span class="t-play">▶</span>' +
-          '</div>' +
-          '<div class="t-info">' +
-            '<div class="t-title">' + t.title + '</div>' +
-            '<div class="t-virtue">' + t.icon + ' ' + t.theme + '</div>' +
-          '</div>' +
-          '<span class="virtue-pill ' + t.cls + '">' + t.theme + '</span>' +
-          '<span class="t-dur">🎵</span>';
-        container.appendChild(row);
-      });
-    })();
-  </script>
 
   <!-- Floating stars generator -->
   <script>
