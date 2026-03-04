@@ -9,7 +9,7 @@ var albums = [
   {
     title: "Virtues",
     description: "10 original songs about patience, courage, kindness, and more — for little hearts ages 2–6! 🌱",
-    coverImage: "https://i.scdn.co/image/ab67616d00001e022e85ae0147d5b257ec8be889",
+    coverImage: "./assets/albums/TKTVirtue.png",
     color: "purple",
     spotifyUrl: "https://open.spotify.com/album/09in4HJtPthQP4JlFnbxxQ",
     amazonUrl: "https://www.amazon.com/dp/B0GR3NLFLK",
