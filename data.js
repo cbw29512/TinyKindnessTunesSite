@@ -31,7 +31,7 @@ var books = [
     author: "Christopher Wilson",
     coverImage: "./assets/books/wake-up-and-smile.png",
     description: "A gentle good-morning story about kindness, gratitude, and starting each day with a smile! 🌅",
-    price: "paid"
-    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when KDP review is done
+    price: "paid",
+    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
   }
 ];
