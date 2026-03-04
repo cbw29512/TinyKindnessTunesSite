@@ -44,19 +44,30 @@ function renderAlbums() {
 
   albums.forEach(function(album) {
     if (album.songs.length === 0) {
-      // SINGLE CARD MODE: whole card is a Spotify link
-      var card = document.createElement("a");
-      card.href = album.spotifyUrl || site.spotifyArtistUrl;
-      card.target = "_blank";
-      card.rel = "noreferrer";
-      card.className = "album-section fade-up";
+      // SINGLE CARD MODE: matches book-card layout for consistency
+      var card = document.createElement("div");
+      card.className = "book-card fade-up";
 
-      card.innerHTML =
-        '<div class="album-header"><img src="' + album.coverImage + '" class="album-cover-thumb" alt="' + album.title + ' cover"></div>' +
-        '<div class="album-title">' + album.title + '</div>' +
-        '<div class="album-desc">' + album.description + '</div>' +
-        '<div style="padding:0 20px 20px"><div class="btn btn-green" style="width:100%">🎧 Listen on Spotify</div></div>';
+      var coverWrap = document.createElement("div");
+      coverWrap.className = "book-card-cover-wrap";
+      coverWrap.innerHTML = '<img src="' + album.coverImage + '" class="book-card-cover" alt="' + album.title + ' cover">';
+      card.appendChild(coverWrap);
 
+      var info = document.createElement("div");
+      info.className = "book-card-info";
+      info.innerHTML =
+        '<h3 class="book-card-title">' + album.title + '</h3>' +
+        '<p class="book-card-desc">' + album.description + '</p>';
+
+      var btn = document.createElement("a");
+      btn.className = "btn btn-green";
+      btn.href = album.spotifyUrl || site.spotifyArtistUrl;
+      btn.target = "_blank";
+      btn.rel = "noreferrer";
+      btn.textContent = "🎧 Listen on Spotify";
+      info.appendChild(btn);
+
+      card.appendChild(info);
       container.appendChild(card);
     } else {
       // Song-grid mode

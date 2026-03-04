@@ -13,18 +13,7 @@ var albums = [
     color: "purple",
     spotifyUrl: "https://open.spotify.com/album/09in4HJtPthQP4JlFnbxxQ",
     amazonUrl: "https://www.amazon.com/dp/B0GR3NLFLK",
-    songs: [
-      { title: "Wakey Wakey",            embedUrl: "https://open.spotify.com/embed/track/1BZ85xVlKGJBoPMYSE5Fug" },
-      { title: "Thinking Cap",           embedUrl: "https://open.spotify.com/embed/track/7797haFTMvyU3TKAuHwQbV" },
-      { title: "One For You",            embedUrl: "https://open.spotify.com/embed/track/1Cap90vFvvzRMIiGRDkgKj" },
-      { title: "Just A Little Bit",      embedUrl: "https://open.spotify.com/embed/track/3LUTfVppkCKRAkVyEDY1X0" },
-      { title: "Brave And Strong",       embedUrl: "https://open.spotify.com/embed/track/4NHWtbEz8igpEmpjiHma2U" },
-      { title: "The Good Seed",          embedUrl: "https://open.spotify.com/embed/track/0LBiBCuLLfIpE0m2JTysUf" },
-      { title: "High Five For Tomorrow", embedUrl: "https://open.spotify.com/embed/track/5Mei5QnOHRPLKmuam60a4t" },
-      { title: "The Helping Song",       embedUrl: "https://open.spotify.com/embed/track/2Ea0GUckFVrH2IQbYmn438" },
-      { title: "The Magic Words",        embedUrl: "https://open.spotify.com/embed/track/7E2G7O4YoMyM1q15mxy5rI" },
-      { title: "The Sleepy Virtue",      embedUrl: "https://open.spotify.com/embed/track/5LxjvpZSyjueyMIUf06mbl" }
-    ]
+    songs: []
   }
 ];
 
@@ -52,5 +41,5 @@ var books = [
     description: "A gentle good-morning story about kindness, gratitude, and starting each day with a smile! 🌅",
     price: "paid",
     amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
-   }
+  }
 ];
