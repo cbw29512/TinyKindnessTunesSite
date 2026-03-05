@@ -49,5 +49,41 @@ var books = [
     description: "A gentle good-morning story about kindness, gratitude, and starting each day with a smile! 🌅",
     price: "paid",
     amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
+  },
+  {
+    title: "Tiny Kindness Tunes: A Virtues Coloring Book",
+    author: "Christopher Wilson",
+    coverImage: "./assets/books/coloring-book-placeholder.png",
+    description: "Color your way through 10 virtues with fun characters! Perfect for little ones ages 2-6. 🖍️",
+    price: "paid",
+    badge: "Coming Soon"
+    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
+  },
+  {
+    title: "Tiny Kindness Tunes: Animals and Friends Coloring Book",
+    author: "Christopher Wilson",
+    coverImage: "./assets/books/coloring-book-placeholder.png",
+    description: "Join adorable animals as they demonstrate kindness, patience, and courage! Ages 2-6. 🐘🦁",
+    price: "paid",
+    badge: "Coming Soon"
+    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
+  },
+  {
+    title: "Tiny Kindness Tunes: Animals and Friends Coloring Book 2",
+    author: "Christopher Wilson",
+    coverImage: "./assets/books/coloring-book-placeholder.png",
+    description: "More lovable animal friends coloring fun! Each scene teaches kindness and good values. Ages 2-6. 🐢🐸",
+    price: "paid",
+    badge: "Coming Soon"
+    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
+  },
+  {
+    title: "Tiny Kindness Tunes: Animals and Friends Coloring Book 3",
+    author: "Christopher Wilson",
+    coverImage: "./assets/books/coloring-book-placeholder.png",
+    description: "The third collection of adorable animal coloring pages full of kindness and virtue! Ages 2-6. 🐻🐦",
+    price: "paid",
+    badge: "Coming Soon"
+    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
   }
 ];
