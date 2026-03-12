@@ -65,8 +65,7 @@ var books = [
     coverImage: "./assets/books/book2-front.png",
     description: "Join adorable animals as they demonstrate kindness, patience, and courage! Ages 2-6. 🐘🦁",
     price: "paid",
-    badge: "Coming Soon"
-    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
+    amazonUrl: "https://amzn.to/4rxvnSr"
   },
   {
     title: "Tiny Kindness Tunes: Animals and Friends Coloring Book 2",
