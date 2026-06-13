@@ -36,7 +36,7 @@ var books = [
     coverImage: "./assets/books/book3-front.png",
     description: "More lovable animal friends coloring fun! Each scene teaches kindness and good values. Ages 2-6. 🐢🐸",
     price: "paid",
-    amazonUrl: "https://amzn.to/4rxvnSr"
+    amazonUrl: "https://amzn.to/4rxvnSr",
   },
 
   // ── COMING SOON ────────────────────────────────────────────────
@@ -46,7 +46,7 @@ var books = [
     coverImage: "./assets/books/book4-front.png",
     description: "The third collection of adorable animal coloring pages full of kindness and virtue! Ages 2-6. 🐻🐦",
     price: "paid",
-    badge: "Coming Soon"
+    badge: "Coming Soon",
     // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
   },
   {
@@ -55,7 +55,7 @@ var books = [
     coverImage: "./assets/books/book2-front.png",
     description: "Join adorable animals as they demonstrate kindness, patience, and courage! Ages 2-6. 🐘🦁",
     price: "paid",
-    badge: "Coming Soon"
+    badge: "Coming Soon",
     // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
   },
   {
@@ -64,7 +64,7 @@ var books = [
     coverImage: "./assets/books/book1-front.png",
     description: "Color your way through 10 virtues with fun characters! Perfect for little ones ages 2-6. 🖍️",
     price: "paid",
-    badge: "Coming Soon"
+    badge: "Coming Soon",
     // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
   },
 
@@ -75,14 +75,14 @@ var books = [
     coverImage: "./assets/books/wake-up-and-smile.png",
     description: "A gentle good-morning story about kindness, gratitude, and starting each day with a smile! 🌅",
     price: "paid",
-    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
+    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF",
   },
   {
     title: "Tiny Kindness: The Coloring Book",
     author: "Christopher Wilson",
     coverImage: "./assets/books/coloring-book-placeholder.png",
     description: "A fun coloring book full of kindness-themed pages for little ones! 🖍️",
-    price: "paid"
+    price: "paid",
     // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXX"  <- uncomment + fill in when live
   },
   {
