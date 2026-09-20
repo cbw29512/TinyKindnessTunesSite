@@ -78,16 +78,17 @@ KDP paperback:
 
 
 
+
 INTERIOR for Monstrous Meals for Daring Chefs
 ---------------------------------------------
 assets/kdp-interiors/monstrous-meals-interior.pdf
-  62 pages, 6.39 x 9.46 inches (6.14 x 9.21 TRIM + 0.125" bleed all sides)
-  Flattened — no leftover proof crop marks
-  Images 300 DPI
+  62 pages
+  PDF size 6.265 x 9.46 in  (KDP bleed formula: +0.125" outer, +0.125" top/bottom, NOT inner)
+  Images stay 0.25" off the gutter/spine
+  300 DPI, flattened
 
-KDP paperback:
-  Trim: 6.14 x 9.21
-  Bleed: YES   (required — art goes to the cut)
-  Ink: PREMIUM COLOR
-  Cover finish: Glossy
+KDP:
+  Trim 6.14 x 9.21
+  Bleed YES   <-- must be on
+  Premium Color
   Title: Monstrous Meals for Daring Chefs
