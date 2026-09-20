@@ -1,7 +1,3 @@
-// ================================================================
-//  RENDERER — renderer.js
-// ================================================================
-
 var COLORS = {
   orange: { hex: "#FF6B35" },
   purple: { hex: "#7B3FBE" },
@@ -9,32 +5,33 @@ var COLORS = {
   pink:   { hex: "#E91E8C" }
 };
 
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&")
+    .replace(/</g, "<")
+    .replace(/>/g, ">")
+    .replace(/"/g, """)
+    .replace(/'/g, "&#39;");
+}
+
 function renderSite() {
-  // Spotify hero button
   var spotifyBtn = document.getElementById("spotifyBtn");
   if (spotifyBtn) spotifyBtn.href = site.spotifyArtistUrl;
 
-  // Spotify artist embed (show if URL is real)
   var embed = document.getElementById("spotifyArtistEmbed");
-  if (embed && site.spotifyArtistUrl && site.spotifyArtistUrl.indexOf("your-id") === -1) {
+  if (embed && site.spotifyArtistUrl) {
     var artistId = site.spotifyArtistUrl.split("/artist/")[1];
     if (artistId) {
-      embed.src = "https://open.spotify.com/embed/artist/" + artistId;
-      embed.style.display = "block";
+      embed.src = "https://open.spotify.com/embed/artist/" + artistId.split("?")[0] + "?utm_source=generator";
+      embed.removeAttribute("hidden");
     }
   }
 
-  // About text
-  var aboutText = document.getElementById("aboutText");
-  if (aboutText) aboutText.textContent = site.about;
-
-  // Contact email
   var contactEmail = document.getElementById("contactEmail");
   if (contactEmail) contactEmail.href = "mailto:" + site.contactEmail;
 
-  // Footer copyright
   var footerCopy = document.getElementById("footerCopy");
-  if (footerCopy) footerCopy.textContent = "© " + new Date().getFullYear() + " " + site.name + ". Made with 💛";
+  if (footerCopy) footerCopy.textContent = "© " + new Date().getFullYear() + " " + site.name + ". Made with care.";
 }
 
 function renderAlbums() {
@@ -42,68 +39,53 @@ function renderAlbums() {
   if (!container) return;
   container.innerHTML = "";
 
-  albums.forEach(function(album) {
-    if (album.songs.length === 0) {
-      // SINGLE CARD MODE: matches book-card layout for consistency
-      var card = document.createElement("div");
-      card.className = "book-card fade-up";
+  albums.forEach(function (album) {
+    var section = document.createElement("div");
+    section.className = "album-section fade-up";
 
-      var coverWrap = document.createElement("div");
-      coverWrap.className = "book-card-cover-wrap";
-      coverWrap.innerHTML = '<img src="' + album.coverImage + '" class="book-card-cover" alt="' + album.title + ' cover">';
-      card.appendChild(coverWrap);
+    var header = document.createElement("div");
+    header.className = "album-header";
+    header.innerHTML = '<img src="' + esc(album.coverImage) + '" class="album-cover-thumb" alt="' + esc(album.title) + ' cover">';
+    section.appendChild(header);
 
-      var info = document.createElement("div");
-      info.className = "book-card-info";
-      info.innerHTML =
-        '<h3 class="book-card-title">' + album.title + '</h3>' +
-        '<p class="book-card-desc">' + album.description + '</p>';
+    var title = document.createElement("div");
+    title.className = "album-title";
+    title.textContent = album.title;
+    section.appendChild(title);
 
-      var btn = document.createElement("a");
-      btn.className = "btn btn-green";
-      btn.href = album.spotifyUrl || site.spotifyArtistUrl;
-      btn.target = "_blank";
-      btn.rel = "noreferrer";
-      btn.textContent = "🎧 Listen on Spotify";
-      info.appendChild(btn);
+    var desc = document.createElement("div");
+    desc.className = "album-desc";
+    desc.textContent = album.description;
+    section.appendChild(desc);
 
-      card.appendChild(info);
-      container.appendChild(card);
-    } else {
-      // Song-grid mode
-      var section = document.createElement("div");
-      section.className = "album-section fade-up";
+    var links = document.createElement("p");
+    links.className = "album-links";
+    links.innerHTML =
+      '<a class="btn btn-green" href="' + esc(album.spotifyUrl || site.spotifyArtistUrl) + '" target="_blank" rel="noopener">Listen on Spotify</a>' +
+      (album.amazonUrl
+        ? ' <a class="btn btn-amazon" href="' + esc(album.amazonUrl) + '" target="_blank" rel="noopener">Buy on Amazon</a>'
+        : "");
+    section.appendChild(links);
 
-      var header = document.createElement("div");
-      header.className = "album-header";
-      header.innerHTML = '<img src="' + album.coverImage + '" class="album-cover-thumb" alt="' + album.title + ' cover">';
-      section.appendChild(header);
-
-      var title = document.createElement("div");
-      title.className = "album-title";
-      title.textContent = album.title;
-      section.appendChild(title);
-
-      var desc = document.createElement("div");
-      desc.className = "album-desc";
-      desc.textContent = album.description;
-      section.appendChild(desc);
-
+    if (album.songs && album.songs.length) {
       var grid = document.createElement("div");
       grid.className = "songs-grid";
-      album.songs.forEach(function(song) {
+      album.songs.forEach(function (song) {
         var songCard = document.createElement("div");
         songCard.className = "song-card";
         if (song.embedUrl) {
-          songCard.innerHTML = '<iframe src="' + song.embedUrl + '" title="' + song.title + '" height="80" style="width:100%;border:none;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+          songCard.innerHTML =
+            '<iframe src="' + esc(song.embedUrl) + '" title="' + esc(song.title) +
+            '" height="152" loading="lazy" style="width:100%;border:none;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
         } else {
-          songCard.innerHTML = '<div class="song-title">🎵 ' + song.title + '</div>';
+          songCard.innerHTML = '<div class="song-title">' + esc(song.title) + "</div>";
         }
         grid.appendChild(songCard);
       });
       section.appendChild(grid);
-      container.appendChild(section);
     }
+
+    container.appendChild(section);
   });
 }
 
@@ -111,45 +93,52 @@ function renderBooks() {
   var container = document.getElementById("booksContainer");
   if (!container) return;
   container.innerHTML = "";
+  var soonShown = 0;
 
-  books.forEach(function(book) {
+  books.forEach(function (book) {
+    var canBuy = !!book.amazonUrl;
+    var canFree = book.price === "free" && book.pdfUrl;
+    var isSoon = book.badge === "Coming Soon" && !canBuy;
+    if (isSoon) {
+      soonShown += 1;
+      if (soonShown > 1) return;
+    }
+    if (!canBuy && !canFree && !isSoon) return;
+
     var card = document.createElement("div");
     card.className = "book-card fade-up";
 
-    // Cover
     var coverWrap = document.createElement("div");
     coverWrap.className = "book-card-cover-wrap";
-    coverWrap.innerHTML = '<img src="' + book.coverImage + '" class="book-card-cover" alt="' + book.title + ' cover">';
+    coverWrap.innerHTML = '<img src="' + esc(book.coverImage) + '" class="book-card-cover" alt="' + esc(book.title) + ' cover">';
     card.appendChild(coverWrap);
 
-    // Info
     var info = document.createElement("div");
     info.className = "book-card-info";
     info.innerHTML =
-      '<h3 class="book-card-title">' + book.title + '</h3>' +
-      '<p class="book-card-author">By ' + book.author + '</p>' +
-      '<p class="book-card-desc">' + book.description + '</p>';
+      '<h3 class="book-card-title">' + esc(book.title) + "</h3>" +
+      '<p class="book-card-author">By ' + esc(book.author) + "</p>" +
+      '<p class="book-card-desc">' + esc(book.description) + "</p>";
 
-    // Button
     var btn = document.createElement("a");
     btn.className = "btn";
-    if (book.price === "free" && book.pdfUrl) {
+    if (canFree) {
       btn.href = book.pdfUrl;
-      var ext = book.pdfUrl.split('.').pop();
-      btn.setAttribute("download", book.title + "." + ext);
+      btn.setAttribute("download", "tiny-kindness-coloring-page.jpg");
       btn.className += " btn-green";
-      btn.textContent = "📥 Download Free";
-    } else if (book.amazonUrl) {
+      btn.textContent = "Download free page";
+    } else if (canBuy) {
       btn.href = book.amazonUrl;
       btn.target = "_blank";
-      btn.rel = "noreferrer";
+      btn.rel = "noopener";
       btn.className += " btn-amazon";
-      btn.textContent = "🛒 Buy on Amazon";
+      btn.textContent = "Buy on Amazon";
     } else {
       btn.className += " btn-coming";
-      btn.style.opacity = "0.6";
+      btn.style.opacity = "0.7";
       btn.style.cursor = "default";
-      btn.textContent = "⏳ Coming Soon";
+      btn.removeAttribute("href");
+      btn.textContent = "Coming soon";
     }
 
     info.appendChild(btn);
@@ -158,7 +147,6 @@ function renderBooks() {
   });
 }
 
-// BOOTSTRAP
 try {
   renderSite();
   renderAlbums();

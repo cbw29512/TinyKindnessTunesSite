@@ -154,7 +154,8 @@ section { padding:48px 24px; max-width:1080px; margin:0 auto; position:relative;
 }
 
 /* Songs grid (when tracks are present) */
-.songs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; padding:0 20px 20px }
+.album-links { padding: 0 20px 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.spotify-player { width: 100%; max-width: 720px; margin: 0 auto 28px; display: block; border: 0; border-radius: 16px; min-height: 352px; }
 .song-card {
   background:rgba(123,63,190,.05);
   border-radius:14px;
