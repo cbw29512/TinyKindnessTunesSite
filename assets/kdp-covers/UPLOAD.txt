@@ -75,3 +75,20 @@ KDP paperback:
   Page count 94
   COVER: we do not have a wrap for Book 3 yet (bear + lantern).
   Do not use the girl/dino/lightbulb wraps — those are other titles.
+
+
+INTERIOR for Monstrous Meals for Daring Chefs
+---------------------------------------------
+assets/kdp-interiors/monstrous-meals-interior.pdf
+  62 pages, 6.14 x 9.21 inches, Proof sheet removed
+  From monstermeals.pdf (2-up printer proof at 14.06 x 10.21)
+
+KDP paperback — CHANGE these from the screenshot:
+  Trim: 6.14 x 9.21   (keep)
+  Bleed: NO           (file is exact trim, not +0.125)
+  Cover: Glossy is fine
+  Ink: PREMIUM COLOR  (62 pages is below the 72-page Standard Color minimum)
+  Title on KDP should match the book: "Monstrous Meals for Daring Chefs"
+    (shelf currently says "Monsterous Magic")
+
+Image DPI inside is ~195. KDP wants 300. May warn; print will be a bit soft.
