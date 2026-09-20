@@ -34,3 +34,19 @@ Files:
   animals-and-friends-cover.pdf      = Girl with book  (book 1)
   animals-and-friends-2-cover.pdf    = Dino with heart (book 2)
   virtues-coloring-cover.pdf         = Boy with lightbulb
+
+INTERIOR for Book 2
+-------------------
+assets/kdp-interiors/animals-and-friends-2-interior.pdf
+  94 pages, 8.5 x 11 inches, no crop marks, no Proof sheet
+  Built from TKTCbook2.pdf (that file is a 2-up PRINTER PROOF at 18.78 x 12
+  with crop marks — KDP will always reject the proof file)
+
+KDP paperback settings for Book 2:
+  Trim: 8.5" x 11"
+  Bleed: NO  (art sits inside white margins)
+  Ink: Black & white, white paper  (line art)
+  Cover: assets/kdp-covers/animals-and-friends-2-cover.pdf
+  Page count: 94  (matches the 0.213" spine on that cover)
+
+Then click Publish your paperback on page 3.
