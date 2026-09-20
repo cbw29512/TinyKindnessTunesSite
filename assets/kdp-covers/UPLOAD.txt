@@ -50,3 +50,15 @@ KDP paperback settings for Book 2:
   Page count: 94  (matches the 0.213" spine on that cover)
 
 Then click Publish your paperback on page 3.
+
+
+INTERIOR for Virtues Coloring Book
+----------------------------------
+assets/kdp-interiors/virtues-coloring-interior.pdf
+  94 pages, 8.5 x 11, no crop marks, Proof sheet removed
+  From TKTbook.pdf (same 2-up printer proof problem)
+
+KDP paperback:
+  Trim 8.5 x 11 · Bleed NO · Black ink, white paper
+  Cover: assets/kdp-covers/virtues-coloring-cover.pdf (BoyWithLightBulb)
+  Page count 94
