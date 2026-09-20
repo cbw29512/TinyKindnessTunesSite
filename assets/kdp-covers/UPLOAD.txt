@@ -77,18 +77,17 @@ KDP paperback:
   Do not use the girl/dino/lightbulb wraps — those are other titles.
 
 
+
 INTERIOR for Monstrous Meals for Daring Chefs
 ---------------------------------------------
 assets/kdp-interiors/monstrous-meals-interior.pdf
-  62 pages, 6.14 x 9.21 inches, Proof sheet removed
-  From monstermeals.pdf (2-up printer proof at 14.06 x 10.21)
+  62 pages, 6.39 x 9.46 inches (6.14 x 9.21 TRIM + 0.125" bleed all sides)
+  Flattened — no leftover proof crop marks
+  Images 300 DPI
 
-KDP paperback — CHANGE these from the screenshot:
-  Trim: 6.14 x 9.21   (keep)
-  Bleed: NO           (file is exact trim, not +0.125)
-  Cover: Glossy is fine
-  Ink: PREMIUM COLOR  (62 pages is below the 72-page Standard Color minimum)
-  Title on KDP should match the book: "Monstrous Meals for Daring Chefs"
-    (shelf currently says "Monsterous Magic")
-
-Images resampled to 300 DPI (1800x2700). Still an upscale of 200 DPI art — KDP checker will pass; sharpness is limited by the original.
+KDP paperback:
+  Trim: 6.14 x 9.21
+  Bleed: YES   (required — art goes to the cut)
+  Ink: PREMIUM COLOR
+  Cover finish: Glossy
+  Title: Monstrous Meals for Daring Chefs
