@@ -99,7 +99,7 @@ function renderBooks() {
     var isSoon = book.badge === "Coming Soon" && !canBuy;
     if (isSoon) {
       soonShown += 1;
-      if (soonShown > 1) return;
+      if (soonShown > 2) return;
     }
     if (!canBuy && !canFree && !isSoon) return;
 

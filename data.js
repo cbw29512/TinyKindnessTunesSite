@@ -40,12 +40,28 @@ var albums = [
 
 var books = [
   {
-    title: "Tiny Kindness Tunes: Animals and Friends Coloring Book 2",
+    title: "Animals and Friends Coloring Book 2",
     author: "Christopher Wilson",
-    coverImage: "./assets/books/book3-front.jpg",
-    description: "More animal friends. Each page is about kindness. Ages 2–6.",
+    coverImage: "./assets/books/animals-and-friends-2-front.jpg",
+    description: "A woodland world of kind creatures. Large 8.5 × 11 pages. Ages 2–6.",
     price: "paid",
     amazonUrl: "https://amzn.to/4rxvnSr"
+  },
+  {
+    title: "Animals and Friends Coloring Book",
+    author: "Christopher Wilson",
+    coverImage: "./assets/books/animals-and-friends-front.jpg",
+    description: "Storybook friends, flowers, and tiny kindness. Large 8.5 × 11 pages.",
+    price: "paid",
+    badge: "Coming Soon"
+  },
+  {
+    title: "A Virtues Coloring Book",
+    author: "Christopher Wilson",
+    coverImage: "./assets/books/virtues-coloring-front.jpg",
+    description: "Kindness, bright ideas, and calm pages to color. Large 8.5 × 11 pages.",
+    price: "paid",
+    badge: "Coming Soon"
   },
   {
     title: "Wake Up And Smile",
@@ -62,13 +78,6 @@ var books = [
     description: "Print this sample page from the Tiny Kindness coloring books.",
     price: "free",
     pdfUrl: "./assets/books/coloring-page.jpg"
-  },
-  {
-    title: "Animals and Friends Coloring Book 3",
-    author: "Christopher Wilson",
-    coverImage: "./assets/books/book4-front.jpg",
-    description: "Next in the coloring series. Ages 2–6.",
-    price: "paid",
-    badge: "Coming Soon"
   }
 ];
+

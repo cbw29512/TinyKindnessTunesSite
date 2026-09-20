@@ -1,0 +1,36 @@
+KDP UPLOAD — Tiny Kindness Tunes coloring books
+==============================================
+
+These three PDFs ARE the COVER files (wrap: back + spine + front).
+They are NOT the interior.
+
+Measured:
+  Size: 17.463 x 11.250 inches
+  Image: 5239 x 3375 pixels = 300 DPI
+  Height matches 8.5 x 11 trim WITH 0.125" bleed
+  Spine ~0.213"  => built for about 91–95 pages
+    (white B&W paper ~95 pages, color paper ~91 pages)
+
+In KDP, create a PAPERBACK (not Kindle):
+
+  Trim size: 8.5" x 11"
+  Bleed: YES (Bleed)
+  Ink: pick one and STICK to it — spine was calculated for ~94 pages
+  Page count of INTERIOR must be ~91–95 or the cover will be rejected
+      as "cover dimensions do not match"
+
+Upload:
+  Manuscript = interior PDF  (24+ even pages, 8.5x11 or 8.75x11.25 if bleed)
+  Cover      = the matching file in this folder
+
+Do NOT upload these wrap PDFs as the manuscript.
+Do NOT use the tiny ReportLab covers that used to live in assets/books/.
+
+Barcode: KDP prints a barcode on the bottom-right of the BACK cover.
+Leave that corner as art; KDP will overlay the code. If Print Previewer
+warns about barcode collision, we can add a white box there.
+
+Files:
+  animals-and-friends-cover.pdf      = Girl with book  (book 1)
+  animals-and-friends-2-cover.pdf    = Dino with heart (book 2)
+  virtues-coloring-cover.pdf         = Boy with lightbulb
