@@ -62,3 +62,16 @@ KDP paperback:
   Trim 8.5 x 11 · Bleed NO · Black ink, white paper
   Cover: assets/kdp-covers/virtues-coloring-cover.pdf (BoyWithLightBulb)
   Page count 94
+
+
+INTERIOR for Animals and Friends Coloring Book 3
+------------------------------------------------
+assets/kdp-interiors/animals-and-friends-3-interior.pdf
+  94 pages, 8.5 x 11, Proof sheet removed
+  From TKTbook3.pdf (2-up printer proof)
+
+KDP paperback:
+  Trim 8.5 x 11 · Bleed NO · Black ink, white paper
+  Page count 94
+  COVER: we do not have a wrap for Book 3 yet (bear + lantern).
+  Do not use the girl/dino/lightbulb wraps — those are other titles.
