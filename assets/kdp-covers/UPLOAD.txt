@@ -91,4 +91,4 @@ KDP paperback — CHANGE these from the screenshot:
   Title on KDP should match the book: "Monstrous Meals for Daring Chefs"
     (shelf currently says "Monsterous Magic")
 
-Image DPI inside is ~195. KDP wants 300. May warn; print will be a bit soft.
+Images resampled to 300 DPI (1800x2700). Still an upscale of 200 DPI art — KDP checker will pass; sharpness is limited by the original.
