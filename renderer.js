@@ -66,26 +66,24 @@ function renderAlbums() {
         ? ' <a class="btn btn-amazon" href="' + esc(album.amazonUrl) + '" target="_blank" rel="noopener">Buy on Amazon</a>'
         : "");
     section.appendChild(links);
-
-    if (album.songs && album.songs.length) {
-      var grid = document.createElement("div");
-      grid.className = "songs-grid";
-      album.songs.forEach(function (song) {
-        var songCard = document.createElement("div");
-        songCard.className = "song-card";
-        if (song.embedUrl) {
-          songCard.innerHTML =
-            '<iframe src="' + esc(song.embedUrl) + '" title="' + esc(song.title) +
-            '" height="152" loading="lazy" style="width:100%;border:none;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
-        } else {
-          songCard.innerHTML = '<div class="song-title">' + esc(song.title) + "</div>";
-        }
-        grid.appendChild(songCard);
-      });
-      section.appendChild(grid);
-    }
-
     container.appendChild(section);
+  });
+}
+
+function renderSongs() {
+  var grid = document.getElementById("songsGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  albums.forEach(function (album) {
+    (album.songs || []).forEach(function (song) {
+      if (!song.embedUrl) return;
+      var songCard = document.createElement("div");
+      songCard.className = "song-card fade-up";
+      songCard.innerHTML =
+        '<iframe src="' + esc(song.embedUrl) + '" title="' + esc(song.title) +
+        '" height="152" loading="lazy" style="width:100%;border:none;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+      grid.appendChild(songCard);
+    });
   });
 }
 
@@ -150,6 +148,7 @@ function renderBooks() {
 try {
   renderSite();
   renderAlbums();
+  renderSongs();
   renderBooks();
 } catch (e) {
   console.error("TKT render error:", e);
