@@ -127,8 +127,8 @@
       <span class="note-icon" aria-hidden="true">🎵</span> Tiny Kindness Tunes
     </a>
     <div class="nav-links">
-      <a href="#songs">🎶 Songs</a>
       <a href="#books">📚 Books</a>
+      <a href="#songs">🎶 Songs</a>
       <a href="#about">💖 About</a>
       <a href="#contact">✉️ Contact</a>
     </div>
@@ -144,10 +144,11 @@
     </h1>
     <p class="hero-sub">Songs &amp; stories that help kids practice kindness every single day! 💛</p>
     <div class="hero-btns">
-      <a id="spotifyBtn" class="btn btn-green" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener">Listen on Spotify</a>
+      <a class="btn btn-books btn-hero-primary" href="#books">📚 Shop the books</a>
       <a class="btn btn-songs" href="#songs">Play a song here</a>
-      <a class="btn btn-books" href="#books">See the books</a>
+      <a id="spotifyBtn" class="btn btn-green" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener">Listen on Spotify</a>
     </div>
+    <p class="hero-note">Coloring books &amp; storybooks on Amazon 📦 &nbsp;·&nbsp; Songs on Spotify 🎧</p>
     <div class="notes-row" aria-hidden="true">
       <span>🎵</span><span>🌈</span><span>🎶</span><span>⭐</span><span>🎵</span>
     </div>
@@ -161,6 +162,15 @@
   </div>
 
   <main>
+
+    <!-- ── BOOKS SECTION ── -->
+    <section id="books" aria-labelledby="books-heading">
+      <div class="section-header fade-up">
+        <h2 id="books-heading" class="section-title color-purple">📚 Our Books</h2>
+        <p class="section-sub">Read it, sing it, live it! Big 8.5 × 11 coloring books and storybooks, on Amazon now.</p>
+      </div>
+      <div class="books-grid" id="booksContainer"></div>
+    </section>
 
     <!-- ── SONGS SECTION ── -->
     <section id="songs" aria-labelledby="songs-heading">
@@ -179,15 +189,6 @@
       <h3 class="section-sub" style="text-align:center;margin:8px 0 16px">Press play</h3>
       <div class="songs-grid" id="songsGrid"></div>
 
-    </section>
-
-    <!-- ── BOOKS SECTION ── -->
-    <section id="books" aria-labelledby="books-heading">
-      <div class="section-header fade-up">
-        <h2 id="books-heading" class="section-title color-purple">📚 Our Books</h2>
-        <p class="section-sub">Read it, sing it, live it!</p>
-      </div>
-      <div class="books-grid" id="booksContainer"></div>
     </section>
 
     <!-- ── ABOUT SECTION ── -->
@@ -339,13 +340,13 @@
 
   <!-- ── STICKY BOTTOM TOOLBAR ── -->
   <div class="sticky-bottom-nav" role="navigation" aria-label="Bottom navigation">
-    <a class="sbn-item" href="#songs">
-      <span class="sbn-icon">🎶</span>
-      <span class="sbn-label">Songs</span>
-    </a>
     <a class="sbn-item" href="#books">
       <span class="sbn-icon">📚</span>
       <span class="sbn-label">Books</span>
+    </a>
+    <a class="sbn-item" href="#songs">
+      <span class="sbn-icon">🎶</span>
+      <span class="sbn-label">Songs</span>
     </a>
     <a class="sbn-item sbn-center" href="#" aria-label="Home">
       <span class="sbn-home-bubble">💖</span>

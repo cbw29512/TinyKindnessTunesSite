@@ -87,13 +87,22 @@ function renderSongs() {
   });
 }
 
+// Buyable books first, then upcoming titles, then the free sample page.
+function bookRank(book) {
+  if (book.amazonUrl) return 0;
+  if (book.price === "free" && book.pdfUrl) return 2;
+  return 1;
+}
+
 function renderBooks() {
   var container = document.getElementById("booksContainer");
   if (!container) return;
   container.innerHTML = "";
   var soonShown = 0;
 
-  books.forEach(function (book) {
+  books.slice().sort(function (a, b) {
+    return bookRank(a) - bookRank(b);
+  }).forEach(function (book) {
     var canBuy = !!book.amazonUrl;
     var canFree = book.price === "free" && book.pdfUrl;
     var isSoon = book.badge === "Coming Soon" && !canBuy;

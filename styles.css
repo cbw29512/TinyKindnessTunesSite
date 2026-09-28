@@ -58,10 +58,10 @@ nav {
   text-decoration:none; padding:6px 13px; border-radius:999px; transition:0.2s;
 }
 .nav-links a:hover { transform:translateY(-1px); filter:brightness(1.1) }
-.nav-links a:nth-child(1) { color:var(--orange); background:rgba(255,107,53,.12) }
-.nav-links a:nth-child(2) { color:var(--purple); background:rgba(123,63,190,.12) }
-.nav-links a:nth-child(3) { color:var(--blue);   background:rgba(0,119,182,.12)  }
-.nav-links a:nth-child(4) { color:var(--pink);   background:rgba(232,30,140,.12) }
+.nav-links a[href="#songs"]   { color:var(--orange); background:rgba(255,107,53,.12) }
+.nav-links a[href="#books"]   { color:var(--purple); background:rgba(123,63,190,.12) }
+.nav-links a[href="#about"]   { color:var(--blue);   background:rgba(0,119,182,.12)  }
+.nav-links a[href="#contact"] { color:var(--pink);   background:rgba(232,30,140,.12) }
 
 /* ── HERO ── */
 .hero { position:relative; z-index:1; text-align:center; padding:56px 24px 36px }
@@ -78,7 +78,8 @@ nav {
 .word-kind  { color:var(--orange); display:block }
 .word-tunes { color:var(--pink);   display:block }
 .hero-sub { font-size:19px; font-weight:700; color:var(--muted); max-width:480px; margin:0 auto 30px }
-.hero-btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:28px }
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:14px }
+.hero-note { font-size:14px; font-weight:700; color:var(--muted); margin-bottom:24px }
 .notes-row { display:flex; gap:16px; justify-content:center; font-size:24px; opacity:.6 }
 
 /* ── WAVE DIVIDER ── */
@@ -265,6 +266,9 @@ section { padding:48px 24px; max-width:1080px; margin:0 auto; position:relative;
 
 .btn-books  { background:var(--purple); color:#fff }
 .btn-books:hover { box-shadow:0 6px 20px rgba(123,63,190,.4) }
+
+.btn-hero-primary { font-size:19px; padding:17px 36px; box-shadow:0 6px 22px rgba(123,63,190,.34) }
+.btn-hero-primary:hover { box-shadow:0 10px 30px rgba(123,63,190,.46) }
 
 .btn-green  { background:var(--green); color:#fff }
 .btn-green:hover { box-shadow:0 6px 20px rgba(0,137,123,.4) }
