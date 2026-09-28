@@ -70,22 +70,8 @@ function renderAlbums() {
   });
 }
 
-function renderSongs() {
-  var grid = document.getElementById("songsGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
-  albums.forEach(function (album) {
-    (album.songs || []).forEach(function (song) {
-      if (!song.embedUrl) return;
-      var songCard = document.createElement("div");
-      songCard.className = "song-card fade-up";
-      songCard.innerHTML =
-        '<iframe src="' + esc(song.embedUrl) + '" title="' + esc(song.title) +
-        '" height="152" loading="lazy" style="width:100%;border:none;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
-      grid.appendChild(songCard);
-    });
-  });
-}
+// Songs render as static cards in index.html (one Spotify player + a card grid),
+// so there is no per-song iframe wall any more. data.js song embed URLs are kept for reference.
 
 // Buyable books first, then upcoming titles, then the free sample page.
 function bookRank(book) {
@@ -98,7 +84,10 @@ function renderBooks() {
   var container = document.getElementById("booksContainer");
   if (!container) return;
   container.innerHTML = "";
-  var soonShown = 0;
+  var soonWrap = document.getElementById("booksSoon");
+  var soonRow = document.getElementById("booksSoonRow");
+  if (soonRow) soonRow.innerHTML = "";
+  var soonCount = 0;
 
   books.slice().sort(function (a, b) {
     return bookRank(a) - bookRank(b);
@@ -106,11 +95,21 @@ function renderBooks() {
     var canBuy = !!book.amazonUrl;
     var canFree = book.price === "free" && book.pdfUrl;
     var isSoon = book.badge === "Coming Soon" && !canBuy;
+
+    // Upcoming titles go in a smaller "More coming soon" row under the main grid.
     if (isSoon) {
-      soonShown += 1;
-      if (soonShown > 2) return;
+      if (!soonRow) return;
+      var mini = document.createElement("div");
+      mini.className = "book-soon-card";
+      mini.innerHTML =
+        '<img src="' + esc(book.coverImage) + '" class="book-soon-cover" alt="' + esc(book.title) + ' cover" loading="lazy">' +
+        '<div class="book-soon-info"><p class="book-soon-name">' + esc(book.title) + '</p>' +
+        '<span class="book-soon-badge">Coming soon</span></div>';
+      soonRow.appendChild(mini);
+      soonCount += 1;
+      return;
     }
-    if (!canBuy && !canFree && !isSoon) return;
+    if (!canBuy && !canFree) return;
 
     var card = document.createElement("div");
     card.className = "book-card fade-up";
@@ -134,30 +133,28 @@ function renderBooks() {
       btn.setAttribute("download", "tiny-kindness-coloring-page.jpg");
       btn.className += " btn-green";
       btn.textContent = "Download free page";
-    } else if (canBuy) {
+    } else {
       btn.href = book.amazonUrl;
       btn.target = "_blank";
       btn.rel = "noopener";
       btn.className += " btn-amazon";
       btn.textContent = "Buy on Amazon";
-    } else {
-      btn.className += " btn-coming";
-      btn.style.opacity = "0.7";
-      btn.style.cursor = "default";
-      btn.removeAttribute("href");
-      btn.textContent = "Coming soon";
     }
 
     info.appendChild(btn);
     card.appendChild(info);
     container.appendChild(card);
   });
+
+  if (soonWrap) {
+    if (soonCount > 0) soonWrap.removeAttribute("hidden");
+    else soonWrap.setAttribute("hidden", "");
+  }
 }
 
 try {
   renderSite();
   renderAlbums();
-  renderSongs();
   renderBooks();
 } catch (e) {
   console.error("TKT render error:", e);

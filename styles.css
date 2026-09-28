@@ -29,11 +29,11 @@ body::before {
 
 /* ── FLOATING STARS ── */
 .stars { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden }
-.star  { position:absolute; animation:floatStar linear infinite; opacity:.4; user-select:none }
+.star  { position:absolute; animation:floatStar linear infinite; opacity:.18; user-select:none }
 @keyframes floatStar {
   0%   { transform:translateY(100vh) rotate(0deg);   opacity:0 }
-  10%  { opacity:.4 }
-  90%  { opacity:.4 }
+  10%  { opacity:.18 }
+  90%  { opacity:.18 }
   100% { transform:translateY(-120px) rotate(360deg); opacity:0 }
 }
 
@@ -48,14 +48,16 @@ nav {
   padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:10px;
 }
 .nav-logo {
-  font-family:'Baloo 2',cursive; font-size:20px; font-weight:800;
+  font-family:'Baloo 2',cursive; font-size:clamp(16px, 4.6vw, 20px); font-weight:800;
   color:var(--purple); text-decoration:none; display:flex; align-items:center; gap:7px;
+  white-space:nowrap; flex-shrink:0;
 }
 .note-icon { font-style:normal }
 .nav-links { display:flex; gap:6px; flex-wrap:wrap }
 .nav-links a {
   font-family:'Baloo 2',cursive; font-weight:700; font-size:14px;
   text-decoration:none; padding:6px 13px; border-radius:999px; transition:0.2s;
+  white-space:nowrap; flex-shrink:0;
 }
 .nav-links a:hover { transform:translateY(-1px); filter:brightness(1.1) }
 .nav-links a[href="#songs"]   { color:var(--orange); background:rgba(255,107,53,.12) }
@@ -80,14 +82,15 @@ nav {
 .hero-sub { font-size:19px; font-weight:700; color:var(--muted); max-width:480px; margin:0 auto 30px }
 .hero-btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:14px }
 .hero-note { font-size:14px; font-weight:700; color:var(--muted); margin-bottom:24px }
-.notes-row { display:flex; gap:16px; justify-content:center; font-size:24px; opacity:.6 }
+.notes-row { display:flex; gap:16px; justify-content:center; font-size:24px; opacity:.35; position:relative; z-index:-1; pointer-events:none }
 
 /* ── WAVE DIVIDER ── */
 .wave-divider { line-height:0; position:relative; z-index:1 }
 .wave-divider.flip { transform:scaleY(-1) }
 
 /* ── LAYOUT: SECTIONS ── */
-section { padding:48px 24px; max-width:1080px; margin:0 auto; position:relative; z-index:1 }
+main { display:block; width:100%; max-width:1128px; margin:0 auto }
+section { padding:48px 24px; width:100%; max-width:1080px; margin:0 auto; position:relative; z-index:1 }
 .section-header { text-align:center; margin-bottom:32px }
 .section-title {
   font-family:'Baloo 2',cursive; font-weight:800;
@@ -110,7 +113,8 @@ section { padding:48px 24px; max-width:1080px; margin:0 auto; position:relative;
 #albumsContainer,
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 300px));
+  justify-content: center;
   gap: 24px;
   align-items: stretch;
   margin-bottom: 24px;
@@ -213,18 +217,20 @@ section { padding:48px 24px; max-width:1080px; margin:0 auto; position:relative;
 }
 
 .spotify-player { width: 100%; max-width: 720px; margin: 0 auto 28px; display: block; border: 0; border-radius: 16px; min-height: 352px; }
-.songs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
-.song-card {
-  background: var(--card);
-  border-radius: 16px;
-  padding: 10px;
-  box-shadow: var(--shadow-card);
-  min-height: 172px;
-  display: flex;
-  align-items: center;
+
+/* ── MORE COMING SOON (books) ── */
+.books-soon { margin: 8px auto 24px; text-align: center; }
+.books-soon-title { font-family: 'Baloo 2', cursive; font-size: 20px; font-weight: 800; color: var(--purple); margin-bottom: 12px; }
+.books-soon-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 300px)); justify-content: center; gap: 12px; }
+.book-soon-card {
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  background: var(--card); border-radius: 18px; padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06); border: 1.5px dashed rgba(123,63,190,.22);
 }
-.song-card iframe { width: 100%; height: 152px; }
-.song-card:hover { background: #fff; }
+.book-soon-cover { width: 56px; height: 72px; object-fit: contain; flex: 0 0 56px; border-radius: 6px; }
+.book-soon-info { min-width: 0; }
+.book-soon-name { font-weight: 800; font-size: 14px; line-height: 1.3; color: var(--text); overflow-wrap: anywhere; }
+.book-soon-badge { display: inline-block; margin-top: 4px; font-size: 11px; font-weight: 700; color: var(--muted); background: rgba(123,63,190,.1); padding: 2px 10px; border-radius: 999px; }
 
 /* ── ABOUT SECTION ── */
 .about-card {
@@ -308,12 +314,19 @@ footer {
 .footer-emojis { display:block; font-size:22px; margin-bottom:8px; letter-spacing:8px }
 .footer-copy   { font-size:14px; font-weight:600; color:var(--muted) }
 
+/* ── DECORATION SAFETY ── */
+@media (prefers-reduced-motion: reduce) { .stars { display:none } }
+
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 640px) {
   .hero { padding:36px 16px 24px }
   .hero-btns { flex-direction:column; align-items:center }
   .btn { width:100%; max-width:320px }
+  nav { flex-wrap:wrap; justify-content:center; padding:8px 12px; row-gap:6px }
+  .nav-links { width:100%; flex-wrap:nowrap; justify-content:center; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch }
+  .nav-links::-webkit-scrollbar { display:none }
   .nav-links a { font-size:12px; padding:5px 10px }
+  .stars, .notes-row { display:none }
   .about-card { flex-direction:column; padding:24px }
   .about-emoji-stack { display:none }
   .contact-card { padding:36px 20px }
@@ -323,9 +336,7 @@ footer {
 
 @media (max-width: 480px) {
   .nav-logo { font-size:16px }
-  #albumsContainer { grid-template-columns:1fr }
-  .books-grid { grid-template-columns:1fr }
-  .songs-grid { grid-template-columns:1fr }
+  #albumsContainer, .books-grid { grid-template-columns:minmax(0, 340px) }
   .kindness-bubbles { gap:8px }
   .kindness-bubble { font-size:12px; padding:6px 13px }
 }
