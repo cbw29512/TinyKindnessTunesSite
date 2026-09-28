@@ -106,6 +106,21 @@
     }
     body { padding-bottom: 76px; }
 
+
+    /* ── Releases list + support button ── */
+    .releases-card { background: var(--card); border-radius: var(--radius-card); box-shadow: var(--shadow-card); max-width: 720px; margin: 24px auto; padding: 22px 28px; }
+    .releases-title { font-family: 'Baloo 2', cursive; font-size: 1.25rem; font-weight: 800; color: var(--purple); text-align: center; }
+    .releases-sub { text-align: center; color: var(--muted); font-weight: 600; font-size: 0.9rem; margin: 4px 0 14px; }
+    .releases-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+    .releases-list a { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 12px; background: rgba(123,63,190,.06); text-decoration: none; transition: background 0.2s; }
+    .releases-list a:hover { background: rgba(123,63,190,.14); }
+    .rel-title { font-weight: 700; color: var(--purple); font-size: 0.92rem; }
+    .rel-type { font-size: 0.72rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
+    .releases-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 16px; }
+    .btn-bmc { background: #FFDD00; color: #222; }
+    .btn-bmc:hover { box-shadow: 0 6px 20px rgba(255,221,0,.5); }
+    .footer-support { margin: 10px 0 6px; }
+
     @media (max-width: 520px) {
       .about-rich-card { padding: 8px 16px; }
       .about-cta-strip { flex-direction: column; text-align: center; }
@@ -142,13 +157,13 @@
       <span class="word-kind">Kindness</span>
       <span class="word-tunes">Tunes 🎵</span>
     </h1>
-    <p class="hero-sub">Songs &amp; stories that help kids practice kindness every single day! 💛</p>
+    <p class="hero-sub">Songs & stories that help kids practice kindness every single day! 💛</p>
     <div class="hero-btns">
       <a class="btn btn-books btn-hero-primary" href="#books">📚 Shop the books</a>
       <a class="btn btn-songs" href="#songs">Play a song here</a>
       <a id="spotifyBtn" class="btn btn-green" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener">Listen on Spotify</a>
     </div>
-    <p class="hero-note">Coloring books &amp; storybooks on Amazon 📦 &nbsp;·&nbsp; Songs on Spotify 🎧</p>
+    <p class="hero-note">Coloring books & storybooks on Amazon 📦 &nbsp;·&nbsp; Songs on Spotify 🎧</p>
     <div class="notes-row" aria-hidden="true">
       <span>🎵</span><span>🌈</span><span>🎶</span><span>⭐</span><span>🎵</span>
     </div>
@@ -184,6 +199,32 @@
 
 
 
+
+      <!-- ── All releases (compact list) ── -->
+      <div class="releases-card fade-up" role="region" aria-labelledby="releases-heading">
+        <h3 id="releases-heading" class="releases-title">🎧 All 12 releases</h3>
+        <p class="releases-sub">Streaming now on Spotify, Apple Music, Amazon Music, YouTube Music and other major platforms.</p>
+        <!-- TODO(Chris): Superhero Bounce links to the artist page; swap in its direct Spotify URL when handy. -->
+        <ol class="releases-list">
+          <li><a href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener"><span class="rel-title">Superhero Bounce</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/09in4HJtPthQP4JlFnbxxQ" target="_blank" rel="noopener"><span class="rel-title">Virtues</span><span class="rel-type">10-track album</span></a></li>
+          <li><a href="https://open.spotify.com/album/4P09SpGEkP2E6AdbeSTTxh" target="_blank" rel="noopener"><span class="rel-title">Please Please and Thank You</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/6unr8V97RxSaLToFUL6AoW" target="_blank" rel="noopener"><span class="rel-title">Share The Toys</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/track/4uEG3LaZXKMEblnXL7bwEs" target="_blank" rel="noopener"><span class="rel-title">Goodnight, Kind Heart</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/2UCoBXEfiYwmUbYjWXQJt8" target="_blank" rel="noopener"><span class="rel-title">Be A Good Friend</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/3xeartukEymzXUc0XtYVmP" target="_blank" rel="noopener"><span class="rel-title">Listen</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/6DT1CTPTeK5gZuqTtpbPMH" target="_blank" rel="noopener"><span class="rel-title">Use Soft Words</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/7HOTbzIqUSCHNJ6x1qasa6" target="_blank" rel="noopener"><span class="rel-title">Take A Turn</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/28VVhIAFPSk2NXudeT3oBI" target="_blank" rel="noopener"><span class="rel-title">Helping Hands</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/album/6yr3eFUxfRJpbxCoHd5zNJ" target="_blank" rel="noopener"><span class="rel-title">Clean Up Song</span><span class="rel-type">Single</span></a></li>
+          <li><a href="https://open.spotify.com/track/5VNT32bSFyGEiR5cdwn61N" target="_blank" rel="noopener"><span class="rel-title">Wake Up And Smile</span><span class="rel-type">Single</span></a></li>
+        </ol>
+        <div class="releases-actions">
+          <a class="btn btn-green" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener">Follow on Spotify</a>
+          <a class="btn btn-bmc" href="https://buymeacoffee.com/divclass016" target="_blank" rel="noopener">☕ Support Tiny Kindness Tunes</a>
+        </div>
+      </div>
+
       <!-- Dynamic album cards from data.js (Wake Up and Smile, etc.) -->
       <div id="albumsContainer"></div>
       <h3 class="section-sub" style="text-align:center;margin:8px 0 16px">Press play</h3>
@@ -215,7 +256,7 @@
         <div class="about-row">
           <div class="about-row-icon">💛</div>
           <div class="about-row-content">
-            <h3>Perfect for Parents &amp; Caregivers</h3>
+            <h3>Perfect for Parents & Caregivers</h3>
             <p>
               Looking for a book that sparks <strong>real conversations</strong> about feelings and kindness?
               Tiny Kindness Tunes gives families a gentle, joyful way to explore empathy, gratitude,
@@ -295,6 +336,7 @@
 
   <footer>
     <span class="footer-emojis" aria-hidden="true">🎵 💛 🌟 🎶 💖</span>
+    <p class="footer-support"><a class="btn btn-bmc" href="https://buymeacoffee.com/divclass016" target="_blank" rel="noopener">☕ Support Tiny Kindness Tunes</a></p>
     <p class="footer-copy" id="footerCopy"></p>
   </footer>
 
