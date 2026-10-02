@@ -48,6 +48,9 @@ var books = [
     amazonUrl: "https://amzn.to/4rxvnSr"
   },
   {
+    // TODO(owner): paste the Amazon link once this title is live, e.g.
+    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXXX"
+    // Adding it moves this card to the front of the Books grid automatically.
     title: "Animals and Friends Coloring Book",
     author: "Christopher Wilson",
     coverImage: "./assets/books/animals-and-friends-front.jpg",
@@ -56,6 +59,9 @@ var books = [
     badge: "Coming Soon"
   },
   {
+    // TODO(owner): paste the Amazon link once this title is live, e.g.
+    // amazonUrl: "https://www.amazon.com/dp/XXXXXXXXXX"
+    // Adding it moves this card to the front of the Books grid automatically.
     title: "A Virtues Coloring Book",
     author: "Christopher Wilson",
     coverImage: "./assets/books/virtues-coloring-front.jpg",
