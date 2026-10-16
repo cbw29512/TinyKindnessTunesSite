@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tinykindnesstunes.netlify.app/sitemap.xml

@@ -555,3 +555,10 @@ footer {
       .album-right { padding: 24px 20px; }
       .tracklist { max-height: 340px; }
     }
+
+/* Readability: keep all text at 16px or larger */
+nav a, .hero-badge, .hero-note, .book-card-author, .book-card-desc, .book-soon-name, .book-soon-badge,
+.releases-sub, .rel-type, .btn-listen, .album-desc, .about-row-content p, .about-badge, .about-cta-btn,
+.about-cta-strip p, .about-cta-strip span, .kindness-bubble, .star, .footer-copy, .tip-note p, .sbn-label { font-size: 16px !important; }
+.tip-note { max-width: 720px; margin: 24px auto 0; text-align: center; background: var(--card); border-radius: var(--radius-card, 20px); box-shadow: var(--shadow-card); padding: 20px 24px; }
+.tip-note p { margin: 0 0 14px; line-height: 1.6; font-weight: 600; }
