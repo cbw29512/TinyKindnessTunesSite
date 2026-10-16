@@ -31,7 +31,7 @@ var albums = [
     coverImage: "./assets/albums/virtues.jpg",
     color: "purple",
     spotifyUrl: "https://open.spotify.com/album/09in4HJtPthQP4JlFnbxxQ",
-    amazonUrl: "https://www.amazon.com/dp/B0GR3NLFLK",
+    amazonUrl: "https://www.amazon.com/dp/B0GR3NLFLK?tag=maxyourheal04-20",
     songs: [
       { title: "Virtues", embedUrl: "https://open.spotify.com/embed/album/09in4HJtPthQP4JlFnbxxQ?utm_source=generator" }
     ]
@@ -45,7 +45,7 @@ var books = [
     coverImage: "./assets/books/animals-and-friends-2-front.jpg",
     description: "A woodland world of kind creatures. Large 8.5 × 11 pages. Ages 2–6.",
     price: "paid",
-    amazonUrl: "https://amzn.to/4rxvnSr"
+    amazonUrl: "https://www.amazon.com/dp/B0GRN5LNLX?tag=maxyourheal04-20"
   },
   {
     // TODO(owner): paste the Amazon link once this title is live, e.g.
@@ -75,7 +75,7 @@ var books = [
     coverImage: "./assets/books/wake-up-and-smile.jpg",
     description: "A good-morning story about kindness, gratitude, and starting the day with a smile.",
     price: "paid",
-    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
+    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF?tag=maxyourheal04-20"
   },
   {
     title: "Free coloring page",

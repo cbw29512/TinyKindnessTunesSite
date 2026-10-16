@@ -151,10 +151,10 @@
       <span class="note-icon" aria-hidden="true">🎵</span> Tiny Kindness Tunes
     </a>
     <div class="nav-links">
-      <a href="#books">📚 Books</a>
       <a href="#songs">🎶 Songs</a>
       <a href="#about">💖 About</a>
       <a href="#contact">✉️ Contact</a>
+      <a href="#books">📚 Books</a>
     </div>
   </nav>
 
@@ -168,11 +168,10 @@
     </h1>
     <p class="hero-sub">Songs & stories that help kids practice kindness every single day! 💛</p>
     <div class="hero-btns">
-      <a class="btn btn-books btn-hero-primary" href="#books">📚 Shop the books</a>
-      <a class="btn btn-songs" href="#songs">Play a song here</a>
+      <a class="btn btn-songs btn-hero-primary" href="#songs">🎶 Play a song here</a>
       <a id="spotifyBtn" class="btn btn-green" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener">Listen on Spotify</a>
     </div>
-    <p class="hero-note">Coloring books & storybooks on Amazon 📦 &nbsp;·&nbsp; Songs on Spotify 🎧</p>
+    <p class="hero-note">Songs on Spotify 🎧 &nbsp;·&nbsp; <a href="#books">Coloring books & storybooks</a> on Amazon 📦</p>
     <div class="notes-row" aria-hidden="true">
       <span>🎵</span><span>🌈</span><span>🎶</span><span>⭐</span><span>🎵</span>
     </div>
@@ -187,18 +186,6 @@
 
   <main>
 
-    <!-- ── BOOKS SECTION ── -->
-    <section id="books" aria-labelledby="books-heading">
-      <div class="section-header fade-up">
-        <h2 id="books-heading" class="section-title color-purple">📚 Our Books</h2>
-        <p class="section-sub">Read it, sing it, live it! Big 8.5 × 11 coloring books and storybooks, on Amazon now.</p>
-      </div>
-      <div class="books-grid" id="booksContainer"></div>
-      <div class="books-soon" id="booksSoon" hidden>
-        <h3 class="books-soon-title">✨ More coming soon</h3>
-        <div class="books-soon-row" id="booksSoonRow"></div>
-      </div>
-    </section>
 
     <!-- ── SONGS SECTION ── -->
     <section id="songs" aria-labelledby="songs-heading">
@@ -232,7 +219,10 @@
         </ol>
         <div class="releases-actions">
           <a class="btn btn-green" href="https://open.spotify.com/artist/67XoBwmm2MpHN5tNJAJwJi" target="_blank" rel="noopener">Follow on Spotify</a>
-          <a class="btn btn-bmc" href="https://buymeacoffee.com/divclass016" target="_blank" rel="noopener">☕ Support Tiny Kindness Tunes</a>
+        </div>
+        <div class="tip-note">
+          <p>Every song here is free to stream. Hosting the site and making new songs costs money, so if a tune brought a smile to your little one, a tip of any amount, even $1, helps keep the music coming. Thank you! 💛</p>
+          <a class="btn btn-bmc" href="https://buymeacoffee.com/divclass016" target="_blank" rel="noopener">☕ Buy us a coffee</a>
         </div>
       </div>
 
@@ -305,7 +295,7 @@
           Wake Up And Smile is on Amazon now.
           <span>A good-morning story for home and classroom.</span>
         </p>
-        <a class="about-cta-btn" href="https://www.amazon.com/dp/B0GR4HD4YF" target="_blank" rel="noopener">Buy the book</a>
+        <a class="about-cta-btn" href="https://www.amazon.com/dp/B0GR4HD4YF?tag=maxyourheal04-20" target="_blank" rel="noopener">Buy the book</a>
       </div>
 
     </section>
@@ -316,6 +306,19 @@
         <h2 id="contact-heading">🎉 Say Hello!</h2>
         <p>Schools, collaborations, song requests — we'd love to hear from you!</p>
         <a id="contactEmail" class="btn btn-email" href="#">✉️ Send Us a Message</a>
+      </div>
+    </section>
+
+    <!-- ── BOOKS & MERCH SECTION (last, after songs) ── -->
+    <section id="books" aria-labelledby="books-heading">
+      <div class="section-header fade-up">
+        <h2 id="books-heading" class="section-title color-purple">📚 Our Books</h2>
+        <p class="section-sub">Read it, sing it, live it! Big 8.5 × 11 coloring books and storybooks, on Amazon now.</p>
+      </div>
+      <div class="books-grid" id="booksContainer"></div>
+      <div class="books-soon" id="booksSoon" hidden>
+        <h3 class="books-soon-title">✨ More coming soon</h3>
+        <div class="books-soon-row" id="booksSoonRow"></div>
       </div>
     </section>
 
@@ -345,7 +348,6 @@
 
   <footer>
     <span class="footer-emojis" aria-hidden="true">🎵 💛 🌟 🎶 💖</span>
-    <p class="footer-support"><a class="btn btn-bmc" href="https://buymeacoffee.com/divclass016" target="_blank" rel="noopener">☕ Support Tiny Kindness Tunes</a></p>
     <p class="footer-copy" id="footerCopy"></p>
   </footer>
 
@@ -391,24 +393,24 @@
 
   <!-- ── STICKY BOTTOM TOOLBAR ── -->
   <div class="sticky-bottom-nav" role="navigation" aria-label="Bottom navigation">
-    <a class="sbn-item" href="#books">
-      <span class="sbn-icon">📚</span>
-      <span class="sbn-label">Books</span>
-    </a>
     <a class="sbn-item" href="#songs">
       <span class="sbn-icon">🎶</span>
       <span class="sbn-label">Songs</span>
-    </a>
-    <a class="sbn-item sbn-center" href="#" aria-label="Home">
-      <span class="sbn-home-bubble">💖</span>
     </a>
     <a class="sbn-item" href="#about">
       <span class="sbn-icon">💛</span>
       <span class="sbn-label">About</span>
     </a>
+    <a class="sbn-item sbn-center" href="#" aria-label="Home">
+      <span class="sbn-home-bubble">💖</span>
+    </a>
     <a class="sbn-item" href="#contact">
       <span class="sbn-icon">✉️</span>
       <span class="sbn-label">Contact</span>
+    </a>
+    <a class="sbn-item" href="#books">
+      <span class="sbn-icon">📚</span>
+      <span class="sbn-label">Books</span>
     </a>
   </div>
 
