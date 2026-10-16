@@ -75,7 +75,7 @@ var books = [
     coverImage: "./assets/books/wake-up-and-smile.jpg",
     description: "A good-morning story about kindness, gratitude, and starting the day with a smile.",
     price: "paid",
-    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF"
+    amazonUrl: "https://www.amazon.com/dp/B0GR4HD4YF?tag=maxyourheal04-20"
   },
   {
     title: "Free coloring page",
